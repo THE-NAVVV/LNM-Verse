@@ -1,3 +1,18 @@
+<div align="center">
+  
+  # 🚀 LNM-Verse: Campus Utility App
+  
+  ### 🎥 Watch the Full Project Demo
+  
+  <a href="https://drive.google.com/file/d/1FjIe7mEkWsF5RV4t01eEHka48N4T5KBV/view?usp=sharing">
+    <img src="https://img.shields.io/badge/▶_PLAY_DEMO_VIDEO-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch Demo" height="50"/>
+  </a>
+
+  <p><em>Click the button above to see Real-time Bus Tracking, AI Canteen & Rides Logic!</em></p>
+
+</div>
+
+---
 # 🚀 LNM-Verse: The Campus Super App
 
 **Tagline:** Elevating Campus Life.
