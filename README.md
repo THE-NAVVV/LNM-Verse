@@ -5,6 +5,7 @@
 **LNM-Verse** is a comprehensive campus utility platform designed to solve daily student hassles—from food ordering and laundry management to ride-sharing. It leverages the power of Google's ecosystem to create a seamless, real-time experience.
 
 🔗 **Live Demo:** [https://lnm-verse.web.app/welcome](https://lnm-verse.web.app/welcome)  
+   video demo link - https://drive.google.com/file/d/1FjIe7mEkWsF5RV4t01eEHka48N4T5KBV/view?usp=sharing
 *(Recommended for the best testing experience)*
 
 ---
