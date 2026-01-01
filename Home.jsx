@@ -89,7 +89,7 @@ const Home = () => {
   // --- HELPERS ---
   const getScheduleKey = (dayIndex) => (dayIndex === 0 || dayIndex === 6) ? 'weekend' : 'weekday';
 
-  // --- BUS LOGIC (FROM OLD CHECKING.TXT) ---
+  // --- BUS LOGIC 
   const getNextBusData = (direction) => {
     const now = currentTime;
     const todayIndex = now.getDay();
@@ -185,7 +185,7 @@ const Home = () => {
       }
   };
 
-  // --- COMPONENT: NEXT BUS SPLIT (Checking.txt Logic) ---
+  // --- COMPONENT: NEXT BUS SPLIT  ---
   const NextBusSplit = () => {
     const outbound = getNextBusData('outbound');
     const inbound = getNextBusData('inbound');
@@ -233,7 +233,7 @@ const Home = () => {
           <NextBusSplit />
         </section>
 
-        {/* ...Baaki ka return statement aapka same rahega... */}
+        {/* ...... */}
 
         {/* 2. EVENTS */}
         <section>
@@ -287,7 +287,7 @@ const Home = () => {
                 <h2 className="font-bold text-gray-800 text-base flex items-center gap-2 uppercase tracking-wide">
                     <FaTshirt className="text-gray-400"/> Smart Wash <span className="text-gray-400 text-xs">BH-4</span>
                 </h2>
-                {/* Yahan Real Washes Left dikhega */}
+                {/* for real washes  */}
                 <span className="bg-gray-100 text-gray-800 px-3 py-1 text-xs font-black uppercase">{laundryData.washesLeft || 0} Washes Left</span>
              </div>
              
@@ -415,7 +415,7 @@ const Home = () => {
           </div>
         </section>
 
-        {/* 6. BUS SCHEDULE (Same as before) */}
+        {/* 6. BUS SCHEDULE  */}
         <section>
            <div className="flex items-center gap-2 mb-2"><div className="w-1 h-4 bg-orange-500"></div><h2 className="font-bold text-gray-800 text-base uppercase tracking-wide">Complete Bus Schedule</h2></div>
            <div className="bg-white border border-gray-200 shadow-sm p-4">
@@ -474,7 +474,7 @@ const Home = () => {
          </div>
       )}
 
-      {/* LOST MODAL (Same as before) */}
+      {/* LOST MODAL */}
       {showLostModal && (
           <div className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-6">
               <div className="bg-white w-full max-w-sm p-6 shadow-2xl border-t-4 border-teal-500 rounded-none overflow-y-auto max-h-[90vh]">
@@ -506,7 +506,7 @@ const Home = () => {
           </div>
       )}
 
-      {/* NEWS MODAL (Same as before) */}
+      {/* NEWS MODAL  */}
       {selectedNews && (
           <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-6 animate-in fade-in">
             <div className={`bg-white w-full max-w-sm p-6 shadow-2xl border-t-4 ${selectedNews.color.replace('border-l-4', 'border-t-4').replace('border-l-', 'border-t-')}`}>
@@ -522,5 +522,6 @@ const Home = () => {
     </div>
   );
 };
+
 
 export default Home;
