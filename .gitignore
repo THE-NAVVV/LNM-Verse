@@ -9,7 +9,7 @@ pids
 *.seed
 *.pid.lock
 
-# Dependencies (Sabse Important)
+# Dependencies 
 node_modules/
 
 # Build directory
@@ -33,4 +33,5 @@ dist/
 *.ntvs*
 *.njsproj
 *.sln
+
 *.sw?
