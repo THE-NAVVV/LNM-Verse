@@ -15,7 +15,7 @@ const ProfileSetup = ({ user, onSetupComplete }) => {
     setLoading(true);
 
     try {
-      // 1. Firestore mein User ka data save karo (Backup ke liye)
+      // 1. Firestore user data save (Backup ke liye)
       await setDoc(doc(db, "users", user.email), {
         name: user.displayName,
         email: user.email,
@@ -25,12 +25,12 @@ const ProfileSetup = ({ user, onSetupComplete }) => {
         joinedAt: new Date()
       });
 
-      // 2. LocalStorage mein save karo (Fast access ke liye - Cart.jsx yahi use karega)
+      // 2. LocalStorage mein save karo (Fast access  - Cart.jsx use it)
       localStorage.setItem('userPhone', phone);
       localStorage.setItem('userHostel', hostel);
 
       setLoading(false);
-      onSetupComplete(); // App.js ko bolo: "Ho gaya setup, aage jane do"
+      onSetupComplete(); // App.js ko bolo: "setup is done go ahead"
     } catch (error) {
       console.error(error);
       setLoading(false);
@@ -79,5 +79,6 @@ const ProfileSetup = ({ user, onSetupComplete }) => {
     </div>
   );
 };
+
 
 export default ProfileSetup;
