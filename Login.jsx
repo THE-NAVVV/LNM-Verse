@@ -9,7 +9,7 @@ const Login = () => {
   const [role, setRole] = useState('student');
 
   useEffect(() => {
-    // Check karo user kaun hai (Student ya Merchant)
+    // Check user (Student ya Merchant)
     const storedRole = localStorage.getItem('userRole');
     if (storedRole) setRole(storedRole);
   }, []);
@@ -62,5 +62,6 @@ const Login = () => {
     </div>
   );
 };
+
 
 export default Login;
