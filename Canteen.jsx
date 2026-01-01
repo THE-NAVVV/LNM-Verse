@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { db, auth } from '../firebase'; 
 import { collection, getDocs, addDoc, serverTimestamp, doc, getDoc, setDoc } from 'firebase/firestore'; 
-// 👇 useNavigate add kiya hai redirection ke liye
+
 import { useNavigate } from 'react-router-dom';
-// 👇 Added AI Icons (Magic, Times, Shapes) and existing icons
+
 import { FaPlus, FaMinus, FaSearch, FaShoppingBag, FaArrowLeft, FaStore, FaCut, FaIceCream, FaGlassCheers, FaChevronRight, FaUtensils, FaMugHot, FaCheckCircle, FaMotorcycle, FaWalking, FaChair, FaClock, FaUser, FaPhone, FaUserFriends, FaMagic, FaTimes, FaRegCircle, FaRegSquare, FaCaretUp } from 'react-icons/fa';
-// 👇 Added Google AI SDK
+
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // --- API KEY ---
-// --- API KEY (Hackathon Bypass Mode) ---
 // We split the key so GitHub doesn't ban it, but it works for the App.
 const part1 = "AIzaSyChB1RfU_eXTn7w";
 const part2 = "H5rgoM_tahiexQJPNqg";
@@ -155,8 +154,6 @@ const Canteen = () => {
     }
   }, [viewState, orderFor]);
 
-  // ❌ fetchMyOrders function remove kar diya
-
   const addToCart = (item, variant = null, price = null) => {
     const cartId = variant ? `${item.id}_${variant}` : item.id;
     const finalPrice = price || item.price;
@@ -165,14 +162,14 @@ const Canteen = () => {
     const existingItems = Object.values(cart);
     if (existingItems.length > 0) {
         if (existingItems[0].shopId !== item.shopId) {
-            // Using helper for nicer name in alert
+        
             if (window.confirm(`⚠️ Switching Shops!\n\nClear cart to order from ${getShopNameFromId(item.shopId)}?`)) {
                 setCart({ [cartId]: { ...item, id: cartId, originalId: item.id, name: finalName, price: finalPrice, qty: 1, selectedVariant: variant, shopId: item.shopId } });
                 setOrderType(item.shopId === "shop_salon" ? "appointment" : "pickup");
                 setDeliveryLocation("");
                 setSelectedTimeSlot("");
 
-                // AI Fix: Close modal if adding from AI
+                
                 if(showAIModal) { setShowAIModal(false); setViewState("CART_VIEW"); }
             }
             return;
@@ -352,7 +349,7 @@ const Canteen = () => {
           setTimeout(() => { 
               setCart({}); 
               setOrderPlaced(false); 
-              // 👇 NEW LOGIC: Seedha MyOrders page par bhejo
+            
               navigate('/orders'); 
           }, 2500);
 
@@ -404,7 +401,7 @@ const Canteen = () => {
       );
   }
 
-  // ❌ MY_ORDERS view wala pura block hata diya hai 
+  
 
   if (viewState === "CART_VIEW") {
       return (
@@ -505,10 +502,10 @@ const Canteen = () => {
       <div className="min-h-screen bg-gray-50 p-6 pb-24 relative">
         <div className="flex justify-between items-center mb-6">
             <div><h1 className="text-3xl font-bold text-gray-800 mb-1">Refuel & Refresh</h1><p className="text-gray-500">Cravings & Cuts</p></div>
-            {/* ❌ Wo history button yahan se hata diya gaya hai */}
+            {/* // */}
 
             <div className="flex gap-2">
-                {/* 🌟 AI BUTTON ADDED HERE */}
+                {/* // */}
                 <button onClick={() => setShowAIModal(true)} className="px-3 py-2 text-xs font-bold rounded-full bg-white text-teal-600 shadow-md border border-teal-100 flex items-center gap-1 hover:bg-teal-50"><FaMagic className="text-lg"/> AI Suggest</button>
                 <button onClick={() => navigate('/orders')} className="px-4 py-2 text-xs font-bold rounded-full bg-teal-600 text-white shadow-sm">My Orders</button>
             </div>
@@ -522,7 +519,7 @@ const Canteen = () => {
              <ShopRow onClick={() => openShop("shop_salon", "Campus Salon")} icon={<FaCut />} color="purple" title="Campus Salon" subtitle="Haircut & Grooming" />
         </div>
 
-        {/* --- 🌟 AI MODAL ADDED HERE (Green/White Theme + PS5 Animation) --- */}
+        {/* --- // */}
         {showAIModal && (
             <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
                 <div className="bg-white w-full max-w-[380px] h-[550px] rounded-3xl shadow-2xl flex flex-col overflow-hidden relative">
@@ -680,5 +677,6 @@ const ShopRow = ({ onClick, icon, color, title, subtitle }) => {
     const bgColors = { teal: "bg-teal-100 text-teal-600", amber: "bg-amber-100 text-amber-600", red: "bg-red-100 text-red-600", orange: "bg-orange-100 text-orange-600", green: "bg-green-100 text-green-600", blue: "bg-blue-100 text-blue-600", purple: "bg-purple-100 text-purple-600" };
     return (<button onClick={onClick} className={`w-full bg-white p-4 rounded-none shadow-sm flex items-center justify-between border border-gray-100 active:scale-95 ${bgColors[color].split(" ")[1] === "text-white" ? bgColors[color] : bgColors[color].replace("text-", "text-").replace("bg-", "bg-opacity-20 bg-")}`}><div className="flex items-center gap-4"><div className={`p-3 rounded-full text-xl ${bgColors[color]}`}>{icon}</div><div className="text-left"><h3 className="font-bold text-gray-800 text-lg">{title}</h3><p className="text-xs text-gray-400">{subtitle}</p></div></div><FaChevronRight className="text-gray-300" /></button>);
 }
+
 
 export default Canteen;
