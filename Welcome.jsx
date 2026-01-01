@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaUserGraduate, FaStore, FaChevronRight, FaArrowLeft } from 'react-icons/fa';
 
-// Saari Shops ki List (IDs must match what you use in DB)
+// Saari Shops ki List (id must match with db - nav vardhan )
 const SHOPS = [
   { id: 'shop_kravers', name: 'Kravers Kitchen', location: 'Main Canteen' },
   { id: 'shop_nescafe_bh4', name: 'Nescafe (BH4)', location: 'Hostel Area' },
