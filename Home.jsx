@@ -7,7 +7,7 @@ import {
 import { auth, db } from "../firebase"; 
 import { collection, addDoc, onSnapshot, query, orderBy, updateDoc, doc, serverTimestamp, getDoc, where, limit } from "firebase/firestore";
 
-// --- CONSTANTS (Schedule, Events, News same as before) ---
+// --- CONSTANTS (Schedule, Events, News) ---
 const DETAILED_SCHEDULE = {
   weekday: {
     outbound: [{ time: "06:00", dest: "Raja Park" }, { time: "07:00", dest: "Ajmeri Gate" }, { time: "08:00", dest: "Raja Park" }, { time: "10:00", dest: "Raja Park" }, { time: "14:00", dest: "Raja Park" }, { time: "16:30", dest: "Raja Park" }, { time: "17:00", dest: "Ajmeri Gate" }, { time: "18:15", dest: "Raja Park" }, { time: "21:00", dest: "Raja Park" }],
@@ -525,3 +525,4 @@ const Home = () => {
 
 
 export default Home;
+
