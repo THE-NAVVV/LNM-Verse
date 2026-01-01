@@ -53,7 +53,7 @@ const MyOrders = () => {
     return () => unsubscribeAuth();
   }, []);
 
-  // --- STATUS COLOR (ADMIN LOGIC KE CLOSE) ---
+  // --- STATUS COLOR  ---
   const getStatusColor = (status) => {
     switch (status) {
       case 'pending':
@@ -281,3 +281,4 @@ const MyOrders = () => {
 };
 
 export default MyOrders;
+
