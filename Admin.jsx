@@ -58,7 +58,7 @@ const Admin = () => {
               setFoundUser({ id: userDoc.id, ...userData });
               setNewWashesValue(userData.washesLeft || 0);
           } 
-          // 🔴 HATA DIYA: "No user found" wala popup ab nahi aayega.
+          
       } catch(e) { console.error(e); }
       setIsSearchingUser(false);
   };
@@ -69,7 +69,7 @@ const Admin = () => {
           await updateDoc(doc(db, "users", foundUser.id), { washesLeft: parseInt(newWashesValue) });
           setFoundUser({ ...foundUser, washesLeft: parseInt(newWashesValue) });
           setEditWashesMode(false);
-          // 🔴 SILENT UPDATE: Koi popup nahi aayega update par.
+    
       } catch(e) { console.error(e); }
   };
 
@@ -85,7 +85,7 @@ const Admin = () => {
               });
               await updateDoc(doc(db, "users", foundUser.id), { washesLeft: increment(-1) });
               setFoundUser({ ...foundUser, washesLeft: foundUser.washesLeft - 1 });
-              // 🔴 SILENT ADD: Wash add hone par popup nahi aayega.
+              
           } catch(e) { console.error(e); }
       }
   };
@@ -188,12 +188,12 @@ const Admin = () => {
                             <div className="flex flex-col gap-2 mb-4 bg-gray-50 p-3 rounded-none border border-gray-100">
                                 <div className="flex items-center gap-2 text-xs font-bold text-gray-700">
                                     <FaTaxi className="text-yellow-500"/>
-                                    {/* 👇 FIX: 'passengers' check karega */}
+                                    {/* // */}
                                     <span className="uppercase">{order.route} ({order.passengers || order.pax || 1} Pax)</span>
                                 </div>
                                 <div className="flex items-center gap-2 text-xs font-bold text-gray-600">
                                     <FaPhoneAlt className="text-teal-600" size={10} />
-                                    {/* 👇 FIX: 'contactNumber' check karega */}
+                                    {/* // */}
                                     <span className="font-mono">{order.contactNumber || order.phone || 'No Phone'}</span>
                                     {(order.contactNumber || order.phone) && <a href={`tel:${order.contactNumber || order.phone}`} className="ml-auto text-[9px] bg-black text-white px-2 py-0.5 uppercase">Call</a>}
                                 </div>
@@ -230,7 +230,7 @@ const Admin = () => {
                     );
                 }
 
-                // 3. STANDARD SHOPS (FOOD/SALON) - OLD UI RESTORED 100%
+                // 3. STANDARD SHOPS (FOOD/SALON) 
                 return (
                     <div key={order.id} className="bg-white p-5 rounded-none shadow-sm border border-gray-100 flex flex-col relative overflow-hidden group hover:shadow-md transition-all">
                         <div className="flex justify-between items-start mb-4">
@@ -297,5 +297,6 @@ const Admin = () => {
     </div>
   );
 };
+
 
 export default Admin;
