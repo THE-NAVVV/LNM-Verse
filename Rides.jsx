@@ -112,7 +112,7 @@ const Rides = () => {
         setCalculatedPrice(0); 
         return;
     }
-    // Pricing logic remains same...
+    // Pricing logic 
     switch(cabRoute) {
         case "raja_park": p === 1 ? pricePerHead=300 : p > 3 ? pricePerHead=100 : pricePerHead=150; break;
         case "ajmeri_gate": p === 1 ? pricePerHead=400 : p === 2 ? pricePerHead=200 : p === 3 ? pricePerHead=150 : pricePerHead=100; break;
@@ -823,6 +823,7 @@ const Rides = () => {
     </div>
   );
 };
+
 
 
 export default Rides;
