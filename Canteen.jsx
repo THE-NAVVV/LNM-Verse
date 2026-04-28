@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 
 import { FaPlus, FaMinus, FaSearch, FaShoppingBag, FaArrowLeft, FaStore, FaCut, FaIceCream, FaGlassCheers, FaChevronRight, FaUtensils, FaMugHot, FaCheckCircle, FaMotorcycle, FaWalking, FaChair, FaClock, FaUser, FaPhone, FaUserFriends, FaMagic, FaTimes, FaRegCircle, FaRegSquare, FaCaretUp } from 'react-icons/fa';
 
-import { GoogleGenerativeAI } from "@google/generative-ai";
 
 
 
