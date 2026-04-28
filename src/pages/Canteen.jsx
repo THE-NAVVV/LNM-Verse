@@ -6,8 +6,6 @@ import { useNavigate } from 'react-router-dom';
 // 👇 Added AI Icons (Magic, Times, Shapes) and existing icons
 import { FaPlus, FaMinus, FaSearch, FaShoppingBag, FaArrowLeft, FaStore, FaCut, FaIceCream, FaGlassCheers, FaChevronRight, FaUtensils, FaMugHot, FaCheckCircle, FaMotorcycle, FaWalking, FaChair, FaClock, FaUser, FaPhone, FaUserFriends, FaMagic, FaTimes, FaRegCircle, FaRegSquare, FaCaretUp } from 'react-icons/fa';
 // 👇 Added Google AI SDK
-import { GoogleGenerativeAI } from "@google/generative-ai";
-
 
 
 // --- HELPER: GET SHOP NAME STRICTLY FROM ID (For AI Display) ---
