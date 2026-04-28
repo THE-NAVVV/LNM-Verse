@@ -8,13 +8,7 @@ import { FaPlus, FaMinus, FaSearch, FaShoppingBag, FaArrowLeft, FaStore, FaCut, 
 
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-// --- API KEY ---
-// We split the key so GitHub doesn't ban it, but it works for the App.
-const part1 = "AIzaSyChB1RfU_eXTn7w";
-const part2 = "H5rgoM_tahiexQJPNqg";
-const API_KEY = part1 + part2;
 
-const genAI = new GoogleGenerativeAI(API_KEY);
 
 // --- HELPER: GET SHOP NAME STRICTLY FROM ID (For AI Display) ---
 const getShopNameFromId = (id) => {
